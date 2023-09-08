@@ -73,6 +73,9 @@ img {
     text-align: center;
 }
 
+.wd-100 {
+    width: 100%;
+}
 
 /** Header */
 .header {
@@ -165,11 +168,18 @@ img {
     text-transform: uppercase;
     font-weight: 700; /* Bold */
     margin-bottom: 2rem;
+    border: none;
+    width: 100%;
 }
 @media (min-width: 768px) {
     .boton {
+        width: auto;
         display: inline-block;
     }
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 .boton--primario {
@@ -181,7 +191,7 @@ img {
 }
 
 
-/** Cursos */
+/** Cursos - Index */
 .cursos {
     list-style: none;
 }
@@ -195,17 +205,21 @@ img {
     margin-bottom: 0;
 }
 
-.widget-curso__label {
+.widget-curso__label,
+.curso__label {
     font-family: var(--fuenteHeading);
     font-weight: 700;
 }
 
-.widget-curso__info {
+.widget-curso__info,
+.curso__info {
     font-weight: 400;
 }
 
 .widget-curso__label,
-.widget-curso__info {
+.widget-curso__info,
+.curso__label,
+.curso__info {
     font-size: 2rem;
 }
 
@@ -226,4 +240,74 @@ img {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
     }
+}
+
+
+/*****************************/
+/** Cursos */
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--grisClaro);
+}
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+
+.curso:last-of-type {
+    border-bottom: none;
+}
+
+
+/*****************************/
+/** Contacto */
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -10rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {
+    display: block;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .campo {
+        display: flex;
+    }
+}
+
+.campo .boton {
+    padding: 2rem 3rem;
+}
+
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+}
+
+.campo__field {
+    border: 1px solid var(--grisClaro);
+    padding: 1rem;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .campo__field {
+        flex: 1;
+    }
+}
+
+.campo__field--textarea {
+    height: 20rem;
 }
